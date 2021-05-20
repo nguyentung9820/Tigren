@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_cart_product_add_after">
+        <observer name="tigren_checkout_cart_product_add_after" instance="Tigren\Rules\Observer\Cart"/>
+    </event>
+    <!-- <event name="checkout_cart_update_items_after">
+        <observer name="tigren_checkout_cart_update_items_after" instance="Tigren\Rules\Observer\Updatecart"/>
+    </event> -->
+</config>

@@ -1,0 +1,19 @@
+{
+    "customer_group_catalog": {
+        "column": {
+            "rule_id": true,
+            "name": true,
+            "customer_group": true,
+            "store": true,
+            "products": true,
+            "discount_amount": true,
+            "start_time": true,
+            "end_time": true,
+            "priority": true,
+            "active": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

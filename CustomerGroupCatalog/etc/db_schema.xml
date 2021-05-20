@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+<table name="customer_group_catalog" resource="default" engine="innodb" comment="Customer Group Catalog Table">
+        <column xsi:type="int" name="rule_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Rule ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Name"/>
+        <column xsi:type="text" name="customer_group" nullable="true" comment="Customer Group"/>
+        <column xsi:type="text" name="store" nullable="true" comment="Store"/>
+        <column xsi:type="text" name="products" nullable="true" comment="Products"/>
+        <column xsi:type="decimal" name="discount_amount" scale="6" precision="20" unsigned="true" nullable="true" comment="Discount Amount"/>
+        <column xsi:type="date" name="start_time" nullable="true" comment="Start Time"/>
+        <column xsi:type="date" name="end_time" nullable="true" comment="End Time"/>
+        <column xsi:type="smallint" name="priority" padding="5" unsigned="true" nullable="true" comment="Priority"/>
+        <column xsi:type="smallint" name="active" padding="5" unsigned="true" nullable="true" comment="Active"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+        </constraint>
+    </table>
+</schema>

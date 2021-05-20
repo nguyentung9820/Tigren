@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+      <add id="Tigren_Rules::rules" title="Discount Rules" module="Tigren_Rules" sortOrder="10" resource="Tigren_Rules::rules" />
+      <add id="Tigren_Rules::manage" title="Manage" translate="title" module="Tigren_Rules" parent="Tigren_Rules::rules" sortOrder="20" dependsOnModule="Tigren_Rules" resource="Tigren_Rules::rules" action="rules/manage" />
+    </menu>
+</config>

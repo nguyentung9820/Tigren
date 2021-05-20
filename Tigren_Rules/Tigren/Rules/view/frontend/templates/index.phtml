@@ -1,0 +1,106 @@
+<?php 
+// $productSkuCollection = $block->getSkuFromRules();
+// foreach($productSkuCollection as $productSku) {
+//     $block->getProductBySku($productSku);
+// }
+    
+// echo $product->getEntityId();
+// echo '<br />';
+// $product = $block->getProductBySku('WT09-S-White');
+// echo $block->getParentUrl('WT09-S-White');
+// $block->getProductBySku($product_sku)->getEntityId();
+?>
+<div class="block widget block-products-list grid">
+    <div class="block-content">
+        <div class="products-grid grid">
+            <ol class="product-items widget-product-grid">
+                <?php
+                foreach($block->getSkuFromRules() as $product_sku) {
+                ?>
+
+                <li class="product-item">                        
+                    <div class="product-item-info">
+                        <a href=" <?php echo $block->getParentUrl($product_sku); ?>" class="product-item-photo">
+                            <span class="product-image-container product-image-container-6" style="width: 240px;">
+                                <span class="product-image-wrapper" style="padding-bottom: 125%;">
+                                    <img class="product-image-photo" src="<?php echo $block->getProductImageUrl($block->getProductBySku($product_sku)->getEntityId()) ?>" loading="lazy" width="240" height="300" alt="Fusion Backpack">
+                                </span>
+                            </span>
+                            <style>
+                                .product-image-container-6 {
+                                    width: 240px;
+                                }
+                                .product-image-container-6 span.product-image-wrapper {
+                                    padding-bottom: 125%;
+                                }
+                            </style>
+                            <script type="text/javascript">
+                                prodImageContainers = document.querySelectorAll(".product-image-container-6");
+                                for (var i = 0; i < prodImageContainers.length; i++) {
+                                    prodImageContainers[i].style.width = "240px";
+                                }
+                                prodImageContainersWrappers = document.querySelectorAll(".product-image-container-6  span.product-image-wrapper");
+                                for (var i = 0; i < prodImageContainersWrappers.length; i++) {
+                                    prodImageContainersWrappers[i].style.paddingBottom = "125%";
+                                }
+                            </script>                            
+                        </a>
+                        <div class="product-item-details">
+                            <strong class="product-item-name">
+                                <a title="<?php echo $block->getProductBySku($product_sku)->getName() ?>" href=" <?php echo $block->getParentUrl($product_sku); ?>" class="product-item-link"><?php echo $block->getProductBySku($product_sku)->getName() ?></a>
+                            </strong>
+                            <!-- <div class="product-reviews-summary short">
+                                <div class="rating-summary">
+                                    <span class="label"><span>Rating:</span></span>
+                                    <div class="rating-result" id="rating-result_6" title="67%">
+                                        <span style="width: 67%;"><span>67%</span></span>
+                                    </div>
+                                    <script type="text/javascript">
+                                    var elemMvj0Zm9T = document.querySelector('#rating-result_6 span');
+                                    if (elemMvj0Zm9T) {
+                                        elemMvj0Zm9T.style.width = '67%';
+                                    }
+                                    </script>        
+                                </div>
+                                <div class="reviews-actions">
+                                    <a class="action view" href="http://example.com/fusion-backpack.html#reviews">3&nbsp;<span>Reviews</span></a>
+                                </div>
+                            </div> -->
+                            <div class="price-box price-final_price" data-role="priceBox" data-product-id="6">
+                                <span class="price-container price-final_price tax weee">
+                                    <span id="old-price-6-widget-product-grid" data-price-amount="59" data-price-type="finalPrice" class="price-wrapper ">
+                                        <span class="price"><del> $<?php echo intval($block->getProductBySku($product_sku)->getPrice()) ?> </del> &nbsp;&nbsp;&nbsp;&nbsp; $<?php echo $block->getFinalPrice($product_sku) ?></span>
+                                    </span>
+                                </span>
+                            </div>
+                            <!-- <div class="product-item-inner">
+                                <div class="product-item-actions">
+                                    <div class="actions-primary">
+                                        <form data-role="tocart-form" data-product-sku="24-MB02" action="http://example.com/checkout/cart/add/uenc/aHR0cDovL2V4YW1wbGUuY29tLw%2C%2C/product/6/" method="post">
+                                            <input type="hidden" name="product" value="6">
+                                            <input type="hidden" name="uenc" value="aHR0cDovL2V4YW1wbGUuY29tL2NoZWNrb3V0L2NhcnQvYWRkL3VlbmMvYUhSMGNEb3ZMMlY0WVcxd2JHVXVZMjl0THclMkMlMkMvcHJvZHVjdC82Lw,,">
+                                            <input name="form_key" type="hidden" value="xIam4HhHGwdGuE9Y">                                                            <button type="submit" title="Add to Cart" class="action tocart primary">
+                                            <span>Add to Cart</span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="actions-secondary" data-role="add-to-links">
+                                        <a href="#" data-post="{&quot;action&quot;:&quot;http:\/\/example.com\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:6,&quot;uenc&quot;:&quot;aHR0cDovL2V4YW1wbGUuY29tLw,,&quot;}}" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
+                                            <span>Add to Wish List</span>
+                                        </a>
+                                        <a href="#" class="action tocompare" data-post="{&quot;action&quot;:&quot;http:\/\/example.com\/catalog\/product_compare\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:&quot;6&quot;,&quot;uenc&quot;:&quot;aHR0cDovL2V4YW1wbGUuY29tLw,,&quot;}}" title="Add to Compare">
+                                            <span>Add to Compare</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </li>
+                <?php
+                }
+                ?>
+            </ol>
+        </div>
+    </div>
+</div>

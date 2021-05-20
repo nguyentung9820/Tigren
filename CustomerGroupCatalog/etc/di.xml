@@ -1,0 +1,40 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="RulesGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Tigren\CustomerGroupCatalog\Model\ResourceModel\Rule\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">RulesGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="RulesGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="tigren_rule_listing_data_source" xsi:type="string">Tigren\CustomerGroupCatalog\Model\ResourceModel\Rule\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="tigren_rule_form_data_source" xsi:type="string">Tigren\CustomerGroupCatalog\Model\ResourceModel\Rule\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Tigren\CustomerGroupCatalog\Model\ResourceModel\Rule\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">customer_group_catalog</argument>
+            <argument name="resourceModel" xsi:type="string">Tigren\CustomerGroupCatalog\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </virtualType>
+</config>
